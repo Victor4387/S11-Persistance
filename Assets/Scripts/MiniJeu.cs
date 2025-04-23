@@ -8,6 +8,7 @@ public class MiniJeu : MonoBehaviour
     public float pointageTemps;
     public TextMeshProUGUI textScore;
     public TextMeshProUGUI textScorePanneau;
+    public TMP_InputField inputNom;
 
     [SerializeField] public GameObject panneauRecord;
 
@@ -36,5 +37,11 @@ public class MiniJeu : MonoBehaviour
         //Debug.Log("Test1");
         panneauRecord.SetActive(true);
         textScorePanneau.text = textScore.text;
+    }
+
+    public void EnregistrerNomRecord()
+    {
+        string nom = inputNom.text;
+        PlayerPrefs.SetString("nom", nom);
     }
 }
