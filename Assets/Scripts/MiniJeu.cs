@@ -17,4 +17,14 @@ public class MiniJeu : MonoBehaviour
     {
         textScore.text = pointageTemps.ToString("00.00");
     }
+
+    public void TraiterDefaite()
+    {
+        Debug.Log("Defaite!");
+        float recordActuel = PlayerPrefs.GetFloat("meilleurScore", 0f);
+        if (pointageTemps >= recordActuel)
+        {
+            Invoke("MontrerPanneauNouveauRecord", 3f);
+        }
+    }
 }
