@@ -7,6 +7,9 @@ public class MiniJeu : MonoBehaviour
 {
     public float pointageTemps;
     public TextMeshProUGUI textScore;
+    public TextMeshProUGUI textScorePanneau;
+
+    [SerializeField] public GameObject panneauRecord;
 
     void Start()
     {
@@ -26,5 +29,12 @@ public class MiniJeu : MonoBehaviour
         {
             Invoke("MontrerPanneauNouveauRecord", 3f);
         }
+    }
+
+    void MontrerPanneauNouveauRecord()
+    {
+        //Debug.Log("Test1");
+        panneauRecord.SetActive(true);
+        textScorePanneau.text = textScore.text;
     }
 }
